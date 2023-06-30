@@ -1,0 +1,101 @@
+.rounded-article {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  margin-bottom: 20px;
+  background-image: url(https://picsum.photos/200);
+}
+
+
+.article {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.head{
+  width: 100%;
+  text-align: center;
+}
+
+.semi-circle {
+  width: 200px;
+  height: 100px;
+  background-color: lightgrey;
+  border-radius: 10rem 10rem 0 0;
+  rotate: 180deg;
+  position: absolute;
+  bottom: 20px;
+}
+
+.reverse {
+  rotate: 180deg;
+  max-height: 100px;
+}
+
+
+
+.admin{
+  word-spacing: 15px;
+  display: none;
+}
+
+
+.admin svg{
+  fill: green; 
+}
+.admin svg:hover{
+  border-radius: 50%;
+  fill: darkgreen;
+  background-color: lightgray;
+}
+
+.avis{
+  width: 100%;
+  border: 1px solid;
+  max-height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color:antiquewhite;
+  margin-top: 2px;
+}
+
+.all-avis{
+  max-height: 30vh;
+  overflow: auto;
+}
+
+.un-avis{
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  line-height: 0px;
+  border: 1px solid;
+  border-color: black;
+  margin-bottom: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.un-avis p:last-of-type{
+  line-height:normal;
+}
+
+  
+@media (min-width: 1200px) {
+
+  .avis{
+    width: 25%;
+  }
+
+  .all-avis{
+    max-height: 92%;
+
+  }
+
+  main{
+    display: flex;
+  }
+
+}

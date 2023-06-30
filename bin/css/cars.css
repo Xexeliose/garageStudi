@@ -1,0 +1,126 @@
+article {
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 400px;
+    min-height: 300px;
+    margin: 20px;
+}
+
+article img {
+    width: 400px;
+    height: 300px;
+    margin-left: -15px;
+}
+
+.cars {
+    display: flex;
+    justify-content: space-around;
+}
+
+.price-buble {
+    position: absolute;
+    top: -5px;
+    background-color: black;
+    border: 1 solid;
+    border-color: black;
+    color: white;
+    border-radius: 50%;
+    min-width: 150px;
+    text-align: center;
+}
+
+.specs {
+    color: gray;
+    line-height: 8px;
+}
+
+.specs,
+h3,
+.price {
+    margin-left: 10px;
+}
+
+.price {
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+#detail {
+    width: 400px;
+    margin-left: -15px;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal {
+    display: ;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    /* Supprimez la marge supérieure */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: absolute;
+    /* Utilisez une position absolue pour centrer */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Utilisez la translation pour centrer */
+}
+
+/* Styles du bouton de fermeture du modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.reset {
+    width: 100px;
+    max-width: 200px;
+}
+
+@media (max-width: 400px) {
+    article {
+        min-width: 80vw;
+        min-height: 150px;
+    }
+
+    #detail {
+        width: auto;
+        margin-right: -15px;
+    }
+
+    .slider-container {
+        max-width: 80vw;
+    }
+}
