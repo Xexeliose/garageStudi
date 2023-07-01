@@ -1,19 +1,16 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include "dbConnect.php";
 
-$brand = $_REQUEST['brand'];
-$model = $_REQUEST['model'];
-$year = $_REQUEST['year'];
-$motor = $_REQUEST['motor'];
-$km = $_REQUEST['km'];
-$price = $_REQUEST['price'];
+$name = $_REQUEST['name'];
 $id = $_REQUEST['id'];
 
 
 // Fetch column names from a table
 if (isset($_FILES['images']) && !empty($_FILES['images']['name'])) {
-    $query = $conn->query("SELECT images FROM cars WHERE (id=$id) ");
+    $query = $conn->query("SELECT images FROM services WHERE (id=$id) ");
     $oldImg = $query->fetch_assoc();
     unlink($oldImg['images']);
 
@@ -21,13 +18,13 @@ if (isset($_FILES['images']) && !empty($_FILES['images']['name'])) {
     $temporaryPath = $_FILES['images']['tmp_name'];
     $filename = uniqid() . '.png'; // Génère un nom de fichier unique avec l'extension .png
 
-    $destinationPath = '../../bin/img/cars/' . $filename;
+    $destinationPath = '../../bin/img/services/' . $filename;
     move_uploaded_file($temporaryPath, $destinationPath);
     echo "L'image a été téléchargée avec succès.";
-    $sqlQuery = "UPDATE cars SET brand = '$brand', model = '$model', years = '$year', motor = '$motor', km = '$km', price = '$price', images = '$destinationPath' WHERE id = $id";
+    $sqlQuery = "UPDATE services SET name = '$name', images = '$destinationPath' WHERE id = $id";
 
 } else {
-    $sqlQuery = "UPDATE cars SET brand = '$brand', model = '$model', years = '$year', motor = '$motor', km = '$km', price = '$price' WHERE id = $id";
+    $sqlQuery = "UPDATE services SET name = '$name' WHERE id = $id";
 }
 
 if (mysqli_query($conn, $sqlQuery)) {
@@ -35,18 +32,16 @@ if (mysqli_query($conn, $sqlQuery)) {
         . " Please browse your localhost php my admin"
         . " to view the updated data</h3>";
 
-    echo nl2br("\n$brand\n $model\n "
-        . "$year\n $motor\n $km\n $price");
+    echo nl2br("\n$name");
 } else {
     echo "ERROR: Hush! Sorry $sqlQuery. "
         . mysqli_error($conn);
 }
 $conn->close();
 
-header("Location:../cars.php");
+header("Location:../services.php");
 
 
 // Fermer la connexion à la base de données
-//header("Location:../cars.php");
 
 ?>

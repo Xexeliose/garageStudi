@@ -11,6 +11,7 @@
     <!-- My CSS-->
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 
 <body>
@@ -20,14 +21,32 @@
 
 
     <main class="my-2 ">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeAdd">&times;</span>
+                <h2>Ajout de service</h2>
+                <form action="php/addService.php" class="d-flex flex-column" method="post"
+                    enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="brand">Nom</label>
+                        <input type="text" name="name" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Images</label>
+                        <input type="file" name="images" id="images" accept=".png, .jpeg, .jpg" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Valider</button>
 
+                </form>
+            </div>
+        </div>
+        <div id="modModal"></div>
 
         <div class="m-auto row">
             <div class="head">
-
                 <h2>Nos Services:</h2>
                 <div class="admin m-5 text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="green"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="green" id="openModal"
                         class="bi bi-plus-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                         <path
@@ -36,52 +55,10 @@
                 </div>
             </div>
             <div class="container ">
-                <div class="row">
-                    <div class="col-md-4 article">
-                        <div class="rounded-article">
-                            <div class="semi-circle d-flex flex-column justify-content-end">
-                                <div class="admin reverse">
-                                    <p class="d-inline-block">modifier</p>
-                                    <p class="d-inline-block">supprimer</p>
-                                </div>
-                                <h3 class="reverse">Nom</h3>
-                                <div class="reverse ">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 article">
-                        <div class="rounded-article">
-                            <div class="semi-circle d-flex flex-column justify-content-end">
-                                <div class="admin reverse">
-                                    <p class="d-inline-block">modifier</p>
-                                    <p class="d-inline-block">supprimer</p>
-                                </div>
-                                <h3 class="reverse">Nom</h3>
-                                <div class="reverse ">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 article">
-                        <div class="rounded-article">
-                            <div class="semi-circle d-flex flex-column justify-content-end">
-                                <div class="admin reverse">
-                                    <p class="d-inline-block">modifier</p>
-                                    <p class="d-inline-block">supprimer</p>
-                                </div>
-                                <h3 class="reverse">Nom</h3>
-                                <div class="reverse ">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="row" id="service-wrapper">
+                    <?php
+                    include "php/fetchServices.php";
+                    ?>
                 </div>
             </div>
         </div>
@@ -138,9 +115,10 @@
     ?>
 
     <!-- Bootsrap JS-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/jquery.range.css">
+    <script src="js/services.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

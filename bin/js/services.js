@@ -1,5 +1,4 @@
 
-
 // Obtenez les références des éléments du DOM
 var modal = document.getElementById("myModal");
 var modalbtn = document.getElementById("openModal");
@@ -23,71 +22,44 @@ window.addEventListener("click", function (event) {
 });
 
 
-function modifyCar(id) {
-
+function modifyService(id) {
   jQuery.ajax({
     type: "POST",
-    url: 'php/modifyCar.php',
+    url: 'php/modifyService.php',
     dataType: 'html',
     data: { functionname: 'modify', id: id },
     success: function (data) {
       $('#modModal').html(data);
-      filterCars()
+      refreshService();
     }
-  })
-    ;
-
+  });
 }
 
 
-function deleteCar(id) {
-  if (confirm('Etes vous sur de vouloir suprimer ce véhicule?')) {
+function deleteService(id) {
+  if (confirm('Etes vous sur de vouloir suprimer ce service?')) {
     // Save it!
     jQuery.ajax({
       type: "POST",
-      url: 'php/modifyCar.php',
-      dataType: 'json',
+      url: 'php/modifyService.php',
+      dataType: 'html',
       data: { functionname: 'delete', id: id },
       success: function () {
-        filterCars()
-      }
-    });
-  } else {
-    // Do nothing!
-    //console.log('Delete aborted');
-  };
-
-
-}
-
-var cpt = 0;
-function filterCars() {
-  cpt++;
-  if (cpt >= 3) {
-    var price_range = $('#price_range').val();
-    var km_range = $('#km_range').val();
-    var year_range = $('#year_range').val();
-
-    var data = {
-      price_range,
-      km_range,
-      year_range
-    }
-
-
-    $.ajax({
-      type: 'POST',
-      url: 'php/fetchCars.php',
-      data: data,
-      beforeSend: function () {
-        $('.wrapper').css("opacity", ".5");
+        refreshService();
       },
-      success: function (html) {
-        $('#cars-container').html(html);
-        $('.wrapper').css("opacity", "");
-      }
     });
-  }
+  };
 }
 
+
+function refreshService() {
+  $.ajax({
+    type: 'POST',
+    url: 'php/fetchServices.php',
+         
+    success: function (html) {
+      $('#service-wrapper').html(html);
+    }
+  });
+}
 

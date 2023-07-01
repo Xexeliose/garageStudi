@@ -69,9 +69,9 @@
                 <input type="file" name="images" id="images" accept=".png, .jpeg, .jpg" required>
               </div>
               <button type="submit" class="btn btn-primary">Valider</button>
+            </div>
           </form>
         </div>
-      </div>
     </div>
     </div>
     <div id="modModal"></div>
@@ -96,7 +96,6 @@
     <div class="cars row row-cols-lg-3" id="cars-container">
       <?php
       include "php/fetchCars.php";
-
       ?>
 
     </div>

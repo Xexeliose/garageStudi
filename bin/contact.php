@@ -23,7 +23,7 @@
             <h2>Téléphonez-nous:</h2>
             <p style="font-size: larger;">06 XX XX XX XX</p>
             <h2>Formulaire de contact</h2>
-            <form action="process.php" method="POST" id="contact-form">
+            <form action="php/process.php" method="POST" id="contact-form">
 
                 <div class="form-group">
                     <label for="nom">Nom :</label>

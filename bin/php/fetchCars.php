@@ -49,5 +49,8 @@ if (isset($_POST['price_range'])) {
   } else {
     echo '<p>Product(s) not found...</p>';
   }
+  $conn->close();
 }
+
+
 ?>
