@@ -66,59 +66,28 @@
         <div class="avis">
             <div class="d-flex justify-content-around align-items-end">
                 <h2 class="text-center">Vos avis:</h2>
-                <p class="text-center" style=" color: darkgray; font-style: italic;">Donner le votre!</p>
+                <a href="avis.php" class="text-center" style=" color: darkgray; font-style: italic;">Donner le
+                    votre!</a>
             </div>
             <div class="all-avis">
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
-                <article class="un-avis">
-                    <p>nom prenom</p>
-                    <p style="font-size: 0.8rem;">date</p>
-                    <p class="text-avis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti alias
-                        neque, eum magnam odit quam maxime molestiae unde, dolorem hic officia harum esse.</p>
-                </article>
+                <?php
+                include("php/getGoodReviews.php");
+                ?>
             </div>
         </div>
 
     </main>
-
+    
     <?php
     include "footer.php";
     ?>
 
     <!-- Bootsrap JS-->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  <link rel="stylesheet" href="css/jquery.range.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery.range.css">
     <script src="js/services.js"></script>
+    <script src="js/avis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

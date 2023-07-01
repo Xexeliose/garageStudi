@@ -61,7 +61,7 @@ h3,
 }
 
 .modal {
-    display: ;
+    display: none;
     position: fixed;
     z-index: 5;
     left: 0;

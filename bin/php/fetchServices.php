@@ -11,7 +11,7 @@
   if ($query->num_rows > 0) {
     while ($services = $query->fetch_assoc()) {
       echo '
-      <div class="col-md-4 article">
+      <div class="col-md-4 article mt-2">
         <div class="rounded-article" style="background-image: url(' . $services['images'] . '); ">
           <div class="semi-circle d-flex flex-column justify-content-end">
               <div class="admin reverse">

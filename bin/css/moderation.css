@@ -1,0 +1,36 @@
+
+.un-avis{
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 0px;
+    line-height: 1rem;
+    border: 1px solid;
+    border-color: black;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    word-break: break-all;
+    width: 55%;
+  }
+  
+  .un-avis p:last-of-type{
+    line-height:normal;
+    margin-bottom: -10px;
+    margin-top: -10px;
+    font-size: 1.5rem;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ .un-avis button{
+    margin: 15px;
+    font-size: 1.2rem;
+    display: flex;
+  }

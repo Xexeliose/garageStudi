@@ -13,7 +13,7 @@ if ($functionname == "delete") {
     $query = $conn->query("SELECT images FROM cars WHERE (id=$id) ");
     $oldImg = $query->fetch_assoc();
     unlink($oldImg['images']);
-    // Fetch column names from a table
+
     $query = "DELETE FROM `cars` WHERE `id`= $id;";
     $result = $conn->query($query);
 
@@ -26,7 +26,6 @@ if ($functionname == "delete") {
 if ($functionname == "modify") {
     // some action goes here under php
     include "dbConnect.php";
-    // Fetch column names from a table
 
     $query = $conn->query("SELECT * FROM cars WHERE (id=$id) ");
     $car = $query->fetch_assoc();

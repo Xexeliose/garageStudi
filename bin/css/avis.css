@@ -1,0 +1,66 @@
+.rating {
+    unicode-bidi: bidi-override;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    margin-left: -30px;
+}
+
+.rating>span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.rating>span:before {
+    content: "\2605";
+    position: absolute;
+    color: gray;
+}
+
+
+
+.rating>span.selected:before,
+.rating>span.hover:before {
+    color: gold;
+}
+
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+
+
+.modal {
+    width: 400px;
+    height: 100px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto;
+    /* Supprimez la marge supérieure */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: absolute;
+    /* Utilisez une position absolue pour centrer */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Utilisez la translation pour centrer */
+}
+
+
+@media (max-width: 400px) {
+    .modal {
+        width: 90%;
+    }
+}

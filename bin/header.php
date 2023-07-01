@@ -55,18 +55,11 @@ echo '
      </div>
    </div>
  </nav>
- <div class="user-menu bg-dark text-light row row-cols-1 row-cols-lg-4 row-cols-sm-2 ">
+ <div class="user-menu bg-dark text-light row row-cols-1 row-cols-lg-2  ">
    <div class=" col border-right border-bottom">
-     <a href="cars.php">Gérer les occasions</a>
+     <a href="moderation.php">Modération des avis</a>
    </div>
-   <div class=" col border-right border-bottom">
-     <a href="">Modération des avis</a>
-   </div>
-
-   <div class=" col border-right border-bottom">
-     <a href="" class="">Modifier les services</a>
-   </div>
-   <div class=" col border-bottom">
+   <div class=" col border-bottom admin">
      <a href="horaire.php">Modifier les horaires</a>
    </div>
  </div>
