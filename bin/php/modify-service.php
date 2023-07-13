@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ session_start();
+if (isset($_SESSION['user_login'])) {
+
 include "dbConnect.php";
 
 $name = $_REQUEST['name'];
@@ -43,5 +43,5 @@ header("Location:../services.php");
 
 
 // Fermer la connexion à la base de données
-
+}
 ?>

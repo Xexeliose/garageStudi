@@ -74,7 +74,6 @@ if ($mail->send()) {
     echo 'Erreur lors de l\'envoi de l\'email : ' . $mail->ErrorInfo;
 
 }
-    header("Location:../contact.php");
 
 
 

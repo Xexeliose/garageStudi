@@ -25,6 +25,8 @@ if (isset($_POST['price_range'])) {
   $query = $conn->query("SELECT * FROM cars $whereSQL $orderSQL");
 
   if ($query->num_rows > 0) {
+    echo'  <link rel="stylesheet" href="css/cars.css">
+';
     while ($cars = $query->fetch_assoc()) {
       echo '
         <article class="col col-md-1 col-1 col-lg-2">
@@ -38,11 +40,11 @@ if (isset($_POST['price_range'])) {
         </div>
         <div class="border" style="margin-top: -10px;"></div>
         <p class="price" id="price-tag">' . $cars['price'] . ' €</p>
-        <div class="admin">
+        <div class="employe">
           <button class="btn modify-btn" onclick="modifyCar(' . $cars['id'] . ')">Modifier</button>
           <button class="btn delete-btn" onclick="deleteCar(' . $cars['id'] . ')">Suprimer</button>
         </div>
-        <button class="btn btn-dark" id="detail">Détails</button>
+        <button class="btn btn-dark" id="detail" onclick="detailCar(' . $cars['id'] . ')">Détails</button>
         </article>
         ';
     }

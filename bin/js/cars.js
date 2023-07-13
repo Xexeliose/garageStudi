@@ -41,12 +41,13 @@ function modifyCar(id) {
 
 
 function deleteCar(id) {
+
   if (confirm('Etes vous sur de vouloir suprimer ce véhicule?')) {
     // Save it!
     jQuery.ajax({
       type: "POST",
       url: 'php/modifyCar.php',
-      dataType: 'json',
+      dataType: 'html',
       data: { functionname: 'delete', id: id },
       success: function () {
         filterCars()
@@ -60,7 +61,12 @@ function deleteCar(id) {
 
 }
 
+var carsContainer = document.getElementById("cars-container");
+var detailContainer = document.getElementById("detail-container");
+var topWrapper = document.getElementById("topWrapper");
+
 var cpt = 0;
+
 function filterCars() {
   cpt++;
   if (cpt >= 3) {
@@ -79,15 +85,33 @@ function filterCars() {
       type: 'POST',
       url: 'php/fetchCars.php',
       data: data,
-      beforeSend: function () {
-        $('.wrapper').css("opacity", ".5");
-      },
       success: function (html) {
+        carsContainer.style.display = "flex";
+        topWrapper.style.display = "block";
+        detailContainer.style.display = "none";
+
         $('#cars-container').html(html);
-        $('.wrapper').css("opacity", "");
       }
     });
   }
 }
 
 
+
+function detailCar(id) {
+
+  $.ajax({
+    type: 'POST',
+    url: 'php/detailCar.php',
+    data: { id: id },
+    success: function (html) {
+      carsContainer.style.display = "none";
+      topWrapper.style.display = "none";
+      detailContainer.style.display = "flex";
+
+      $('#detail-container').html(html);
+    }
+  });
+
+
+}

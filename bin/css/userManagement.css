@@ -1,5 +1,3 @@
-
-
 #notifModal {
     width: 400px;
     height: 100px;
@@ -23,6 +21,33 @@
     transform: translate(-50%, -50%);
     /* Utilisez la translation pour centrer */
 }
+
+#wrapper {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#suppr{
+    margin-top: 8vh;
+}
+
+#user-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#user-wrapper div {
+    display: flex;
+    align-items: center;
+}
+
+#user-wrapper p {
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
 
 
 @media (max-width: 400px) {

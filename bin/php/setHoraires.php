@@ -1,45 +1,47 @@
 <?php
+ session_start();
+if (isset($_SESSION['user_login'])) {
 
 
-include "dbConnect.php";
+    include "dbConnect.php";
 
-$lHour1 = $_REQUEST['lHour1'];
-$lHour2 = $_REQUEST['lHour2'];
-$lHour3 = $_REQUEST['lHour3'];
-$lHour4 = $_REQUEST['lHour4'];
+    $lHour1 = $_REQUEST['lHour1'];
+    $lHour2 = $_REQUEST['lHour2'];
+    $lHour3 = $_REQUEST['lHour3'];
+    $lHour4 = $_REQUEST['lHour4'];
 
-$maHour1 = $_REQUEST['maHour1'];
-$maHour2 = $_REQUEST['maHour2'];
-$maHour3 = $_REQUEST['maHour3'];
-$maHour4 = $_REQUEST['maHour4'];
+    $maHour1 = $_REQUEST['maHour1'];
+    $maHour2 = $_REQUEST['maHour2'];
+    $maHour3 = $_REQUEST['maHour3'];
+    $maHour4 = $_REQUEST['maHour4'];
 
-$meHour1 = $_REQUEST['meHour1'];
-$meHour2 = $_REQUEST['meHour2'];
-$meHour3 = $_REQUEST['meHour3'];
-$meHour4 = $_REQUEST['meHour4'];
+    $meHour1 = $_REQUEST['meHour1'];
+    $meHour2 = $_REQUEST['meHour2'];
+    $meHour3 = $_REQUEST['meHour3'];
+    $meHour4 = $_REQUEST['meHour4'];
 
-$jHour1 = $_REQUEST['jHour1'];
-$jHour2 = $_REQUEST['jHour2'];
-$jHour3 = $_REQUEST['jHour3'];
-$jHour4 = $_REQUEST['jHour4'];
+    $jHour1 = $_REQUEST['jHour1'];
+    $jHour2 = $_REQUEST['jHour2'];
+    $jHour3 = $_REQUEST['jHour3'];
+    $jHour4 = $_REQUEST['jHour4'];
 
-$vHour1 = $_REQUEST['vHour1'];
-$vHour2 = $_REQUEST['vHour2'];
-$vHour3 = $_REQUEST['vHour3'];
-$vHour4 = $_REQUEST['vHour4'];
+    $vHour1 = $_REQUEST['vHour1'];
+    $vHour2 = $_REQUEST['vHour2'];
+    $vHour3 = $_REQUEST['vHour3'];
+    $vHour4 = $_REQUEST['vHour4'];
 
-$sHour1 = $_REQUEST['sHour1'];
-$sHour2 = $_REQUEST['sHour2'];
-$sHour3 = $_REQUEST['sHour3'];
-$sHour4 = $_REQUEST['sHour4'];
+    $sHour1 = $_REQUEST['sHour1'];
+    $sHour2 = $_REQUEST['sHour2'];
+    $sHour3 = $_REQUEST['sHour3'];
+    $sHour4 = $_REQUEST['sHour4'];
 
-$dHour1 = $_REQUEST['dHour1'];
-$dHour2 = $_REQUEST['dHour2'];
-$dHour3 = $_REQUEST['dHour3'];
-$dHour4 = $_REQUEST['dHour4'];
+    $dHour1 = $_REQUEST['dHour1'];
+    $dHour2 = $_REQUEST['dHour2'];
+    $dHour3 = $_REQUEST['dHour3'];
+    $dHour4 = $_REQUEST['dHour4'];
 
 
-$sqlQuery = "UPDATE `horaires` SET `horaire` = CASE `nom`
+    $sqlQuery = "UPDATE `horaires` SET `horaire` = CASE `nom`
     WHEN 'lHour1' THEN '$lHour1'
     WHEN 'lHour2' THEN '$lHour2'
     WHEN 'lHour3' THEN '$lHour3'
@@ -74,19 +76,19 @@ $sqlQuery = "UPDATE `horaires` SET `horaire` = CASE `nom`
 
 
 
-if (mysqli_query($conn, $sqlQuery)) {
-    echo "<h3>data updated in a database successfully."
-        . " Please browse your localhost php my admin"
-        . " to view the updated data</h3>";
+    if (mysqli_query($conn, $sqlQuery)) {
+        echo "<h3>data updated in a database successfully."
+            . " Please browse your localhost php my admin"
+            . " to view the updated data</h3>";
 
-} else {
-    echo "ERROR: Hush! Sorry $sqlQuery. "
-        . mysqli_error($conn);
+    } else {
+        echo "ERROR: Hush! Sorry $sqlQuery. "
+            . mysqli_error($conn);
+    }
+    header("Location:../horaire.php");
+
+
+
+    $conn->close();
 }
-header("Location:../horaire.php");
-
-
-
-$conn->close();
-
 ?>

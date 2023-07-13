@@ -1,4 +1,6 @@
 <?php
+ session_start();
+if (isset($_SESSION['user_login'])) {
 
 include "dbConnect.php";
 
@@ -30,6 +32,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "Aucun avis pour le moment.";
 }
-
+}
 $conn->close();
 ?>

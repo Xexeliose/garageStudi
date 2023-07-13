@@ -1,13 +1,12 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+ session_start();
+if (isset($_SESSION['user_login'])) {
 
-$functionname = $_POST['functionname'];
-$id = $_POST['id'];
+  $functionname = $_POST['functionname'];
+  $id = $_POST['id'];
 
 
-if ($functionname == "delete") {
+  if ($functionname == "delete") {
     // some action goes here under php
     include "dbConnect.php";
     $query = $conn->query("SELECT images FROM cars WHERE (id=$id) ");
@@ -21,9 +20,9 @@ if ($functionname == "delete") {
     // Fermer la connexion à la base de données
     $conn->close();
 
-}
+  }
 
-if ($functionname == "modify") {
+  if ($functionname == "modify") {
     // some action goes here under php
     include "dbConnect.php";
 
@@ -54,13 +53,14 @@ if ($functionname == "modify") {
               <label for="motor">Type de moteur</label>
 
 
-              <select multiple class="form-control" id="motor" name="motor" required value=' . $car['motor'] . '>
+              <select multiple class="form-control" id="motor" name="motor" required>
                 <option ' . (($car['motor'] == 'Essence') ? 'selected' : '') . '>Essence</option>
                 <option ' . (($car['motor'] == 'Diesel') ? 'selected' : '') . '>Diesel</option>
                 <option ' . (($car['motor'] == 'Electrique') ? 'selected' : '') . '>Electrique</option>
                 <option ' . (($car['motor'] == 'Hybride') ? 'selected' : '') . '>Hybride</option>
                 <option ' . (($car['motor'] == 'Hydrogène') ? 'selected' : '') . '>Hydrogène</option>
               </select>
+              
 
 
               <div class="form-group">
@@ -72,6 +72,9 @@ if ($functionname == "modify") {
               <div class="form-group">
                 <label for="price">Prix</label>
                 <input type="number" name="price" id="price" class="form-control" required value=' . $car['price'] . '>
+              </div>
+                <label for="detail">Description</label>
+                <textarea class="form-control" id="detail" name="detail" rows="5" required >' . $car['detail'] . '</textarea>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlFile1">Images</label>
@@ -100,12 +103,12 @@ if ($functionname == "modify") {
         });
     </script>
     ';
-    
+
 
 
     // Fermer la connexion à la base de données
     $conn->close();
 
+  }
 }
-
 ?>

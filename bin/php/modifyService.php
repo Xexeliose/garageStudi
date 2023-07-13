@@ -1,38 +1,38 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$functionname = $_POST['functionname'];
-$id = $_POST['id'];
+ session_start();
+if (isset($_SESSION['user_login'])) {
 
 
-if ($functionname == "delete") {
-    // some action goes here under php
-    include "dbConnect.php";
-    $query = $conn->query("SELECT images FROM services WHERE (id=$id) ");
-    $oldImg = $query->fetch_assoc();
-    unlink($oldImg['images']);
-    // Fetch column names from a table
-    $query = "DELETE FROM `services` WHERE `id`= $id;";
-    $result = $conn->query($query);
+    $functionname = $_POST['functionname'];
+    $id = $_POST['id'];
 
 
-    // Fermer la connexion à la base de données
-    $conn->close();
+    if ($functionname == "delete") {
+        // some action goes here under php
+        include "dbConnect.php";
+        $query = $conn->query("SELECT images FROM services WHERE (id=$id) ");
+        $oldImg = $query->fetch_assoc();
+        unlink($oldImg['images']);
+        // Fetch column names from a table
+        $query = "DELETE FROM `services` WHERE `id`= $id;";
+        $result = $conn->query($query);
 
 
-}
+        // Fermer la connexion à la base de données
+        $conn->close();
 
-if ($functionname == "modify") {
-    // some action goes here under php
-    include "dbConnect.php";
-    // Fetch column names from a table
 
-    $query = $conn->query("SELECT * FROM services WHERE (id=$id) ");
-    $services = $query->fetch_assoc();
+    }
 
-    echo '
+    if ($functionname == "modify") {
+        // some action goes here under php
+        include "dbConnect.php";
+        // Fetch column names from a table
+
+        $query = $conn->query("SELECT * FROM services WHERE (id=$id) ");
+        $services = $query->fetch_assoc();
+
+        echo '
     <div id="modifyModal" class="modal">
     <div class="modal-content">
         <span class="close" id="closeModModal">&times;</span>
@@ -69,12 +69,12 @@ if ($functionname == "modify") {
         });
     </script>
     ';
-    
 
 
-    // Fermer la connexion à la base de données
-    $conn->close();
 
+        // Fermer la connexion à la base de données
+        $conn->close();
+
+    }
 }
-
 ?>

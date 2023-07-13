@@ -14,7 +14,7 @@
       <div class="col-md-4 article mt-2">
         <div class="rounded-article" style="background-image: url(' . $services['images'] . '); ">
           <div class="semi-circle d-flex flex-column justify-content-end">
-              <div class="admin reverse">
+              <div class="admin reverse adminAlign">
                 <button class="d-inline-block btn" onclick="modifyService(' . $services['id'] . ')">modifier</p>
                 <button class="d-inline-block btn" onclick="deleteService(' . $services['id'] . ')">supprimer</p>
               </div>

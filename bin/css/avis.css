@@ -32,35 +32,3 @@
     display: none;
 }
 
-
-
-.modal {
-    width: 400px;
-    height: 100px;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 0 auto;
-    /* Supprimez la marge supérieure */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    position: absolute;
-    /* Utilisez une position absolue pour centrer */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    /* Utilisez la translation pour centrer */
-}
-
-
-@media (max-width: 400px) {
-    .modal {
-        width: 90%;
-    }
-}

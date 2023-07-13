@@ -1,10 +1,13 @@
+<?php
+$pageTitle = "Services";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+  <title><?php echo isset($pageTitle) ? $pageTitle : "Services"; ?></title>
     <!-- Bootsrap CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -45,7 +48,7 @@
         <div class="m-auto row">
             <div class="head">
                 <h2>Nos Services:</h2>
-                <div class="admin m-5 text-center">
+                <div class="admin adminAlign m-5 text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="green" id="openModal"
                         class="bi bi-plus-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
