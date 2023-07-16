@@ -1,14 +1,15 @@
 <?php
- session_start();
+session_start();
 if (isset($_SESSION['user_login'])) {
 
     include "dbConnect.php";
 
-    // Fetch column names from a table
+    //check for image file
     if (isset($_FILES['images'])) {
 
+        //generate file name / destination
         $temporaryPath = $_FILES['images']['tmp_name'];
-        $filename = uniqid() . '.png'; // Génère un nom de fichier unique avec l'extension .png
+        $filename = uniqid() . '.png';
 
         $destinationPath = '../../bin/img/services/' . $filename;
         move_uploaded_file($temporaryPath, $destinationPath);
@@ -36,6 +37,4 @@ if (isset($_SESSION['user_login'])) {
     }
     $conn->close();
 }
-// Fermer la connexion à la base de données
-
 ?>

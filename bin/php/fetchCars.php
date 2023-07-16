@@ -1,7 +1,6 @@
 <?php
 if (isset($_POST['price_range'])) {
 
-  // Include database configuration file 
   include "dbConnect.php";
 
   // Set conditions for filter by price range 

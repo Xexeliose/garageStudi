@@ -1,20 +1,13 @@
 <?php
-        session_start();
+session_start();
 
-    // Bouton de déconnexion cliqué
-        // Supprimer toutes les variables de session
-        session_unset();
+//Clear, destroy session then go back to home page
+session_unset();
 
-        // Détruire la session
-        session_destroy();
+session_destroy();
 
-        // Redirection vers la page de connexion ou autre page de votre choix
-        header("Location:../services.php");
+header("Location:../services.php");
 
-        exit();
-    
+exit();
 
 ?>
-
-
-

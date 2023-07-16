@@ -5,9 +5,8 @@ include "dbConnect.php";
 
 $id = $_POST['id'];
 
+//Sql to get the car
 $query = $conn->query("SELECT * FROM cars WHERE id=$id");
-
-
 $cars = $query->fetch_assoc();
 
 

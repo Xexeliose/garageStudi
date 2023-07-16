@@ -46,7 +46,7 @@ $(function () {
         from: minYear,
         to: maxYear,
         step: 1,
-        format: '%s ans',
+        format: '%s',
         width: 350,
         showLabels: true,
         isRange: true,

@@ -1,20 +1,19 @@
 <?php
- session_start();
+session_start();
 if (isset($_SESSION['user_login'])) {
     include "dbConnect.php";
 
-
-    // Fetch column names from a table
+    //check for image file
     if (isset($_FILES['images'])) {
-
+        //generate file name / destination
         $temporaryPath = $_FILES['images']['tmp_name'];
-        $filename = uniqid() . '.png'; // Génère un nom de fichier unique avec l'extension .png
+        $filename = uniqid() . '.png';
 
         $destinationPath = '../../bin/img/cars/' . $filename;
         move_uploaded_file($temporaryPath, $destinationPath);
         echo "Les images ont été téléchargées avec succès.";
 
-
+        
         $brand = $_REQUEST['brand'];
         $model = $_REQUEST['model'];
         $year = $_REQUEST['year'];
@@ -41,7 +40,6 @@ if (isset($_SESSION['user_login'])) {
         echo "Une erreur s'est produite lors du téléchargement du fichier.";
     }
     $conn->close();
-    // Fermer la connexion à la base de données
 }
 
 ?>
