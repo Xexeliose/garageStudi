@@ -24,7 +24,7 @@ if (isset($_POST['price_range'])) {
   $query = $conn->query("SELECT * FROM cars $whereSQL $orderSQL");
 
   if ($query->num_rows > 0) {
-    echo'  <link rel="stylesheet" href="/css/cars.css">
+    echo'  <link rel="stylesheet" href="css/cars.css">
 ';
     while ($cars = $query->fetch_assoc()) {
       echo '
