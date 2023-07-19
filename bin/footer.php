@@ -52,7 +52,7 @@ echo '
 </ul>
 
 <ul id="reseaux" class="list-unstyled col-md text-center mt-2">
-  <img src="img/logo.png" class="bg-white d-block m-auto" alt="logo">
+  <img src="bin/img/logo.png" class="bg-white d-block m-auto" alt="logo">
   <li class=" mt-4 d-inline-block"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem"
         fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
         <path

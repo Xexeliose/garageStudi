@@ -136,9 +136,9 @@ $pageTitle = "Occasions";
   <!-- Bootsrap JS-->
 
   <link rel="stylesheet" href="bin/css/jquery.range.css">
-  <script src="js/jquery.range.js"></script>
-  <script src="js/cars.js"></script>
-  <script src="js/rangeslider.js"></script>
+  <script src="bin/js/jquery.range.js"></script>
+  <script src="bin/js/cars.js"></script>
+  <script src="bin/js/rangeslider.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
