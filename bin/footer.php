@@ -48,7 +48,7 @@ echo '
 <footer class="card-footer bg-dark text-light row pt-4 pr-5">
 <ul id="info" class="list-unstyled ml-3 col-md text-center mt-4">
   <li>
-    <a href="#" class="text-decoration-none ">Nous contacter</a>
+    <a href="contact.php" class="text-decoration-none ">Nous contacter</a>
     <p>06 XX XX XX XX</p>
   </li>
 </ul>

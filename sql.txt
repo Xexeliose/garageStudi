@@ -20,7 +20,7 @@ CREATE TABLE `heroku_25f6c313623c56a`.`review` (
   `name` VARCHAR(50),
   `comment` VARCHAR(400),
   `rating` FLOAT,
-  `verifState` TINYINT(1)
+  `verifState` TINYINT(1) DEFAULT '0'
 );
 
 CREATE TABLE `heroku_25f6c313623c56a`.`services` (
@@ -32,11 +32,11 @@ CREATE TABLE `heroku_25f6c313623c56a`.`services` (
 CREATE TABLE `heroku_25f6c313623c56a`.`users` (
   `login` VARCHAR(50) PRIMARY KEY,
   `password` VARCHAR(30),
-  `type` VARCHAR(15)
+  `type` VARCHAR(15) DEFAULT 'Employe'
 );
 
 -- insert admin to DB, change 'john_doe', 'password123'
-INSERT INTO `users` (`login`, `password`, `type`) VALUES ('john_doe', 'password123', 'Administrateur');
+INSERT INTO `users` (`login`, `password`, `type`) VALUES ('Vincent.Parrot@exemple.com', 'admin123', 'Administrateur');
 
 -- insert horaires into DB
 INSERT INTO `horaires` (`nom`, `horaire`) VALUES
