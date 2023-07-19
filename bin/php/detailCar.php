@@ -11,7 +11,7 @@ $cars = $query->fetch_assoc();
 
 
 echo '
-<link rel="stylesheet" href="bin/css/detailCar.css">
+<link rel="stylesheet" href="css/detailCar.css">
 <button id="retour" class="btn btn-dark" onclick="filterCars()"> Retour </button>
 <img src="https://picsum.photos/600/300" alt="carImgé">
 <p>' . $cars['detail'] . '</p>
