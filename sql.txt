@@ -1,54 +1,45 @@
-//Create Databases
-
-CREATE TABLE cars (
-  id INT(6) PRIMARY KEY AUTO_INCREMENT,
-  brand VARCHAR(30),
-  model VARCHAR(30),
-  motor VARCHAR(30),
-  km INT(11),
-  years INT(11),
-  price INT(11),
-  images VARCHAR(255),
-  detail VARCHAR(1000)
+CREATE TABLE `heroku_25f6c313623c56a`.`cars` (
+  `id` INT(6) PRIMARY KEY AUTO_INCREMENT,
+  `brand` VARCHAR(30),
+  `model` VARCHAR(30),
+  `motor` VARCHAR(30),
+  `km` INT(11),
+  `years` INT(11),
+  `price` INT(11),
+  `images` VARCHAR(255),
+  `detail` VARCHAR(1000)
 );
 
-CREATE TABLE horaires (
-  nom VARCHAR(15),
-  horaire TIME DEFAULT '00:00'
+CREATE TABLE `heroku_25f6c313623c56a`.`horaires` (
+  `nom` VARCHAR(15),
+  `horaire` TIME DEFAULT '00:00'
 );
 
-
-CREATE TABLE review (
-  id INT(11) PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(50),
-  comment VARCHAR(400),
-  rating FLOAT,
-  verifState TINYINT(1)
+CREATE TABLE `heroku_25f6c313623c56a`.`review` (
+  `id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(50),
+  `comment` VARCHAR(400),
+  `rating` FLOAT,
+  `verifState` TINYINT(1)
 );
 
-CREATE TABLE services (
-  id INT(11) PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(50),
-  images VARCHAR(100)
+CREATE TABLE `heroku_25f6c313623c56a`.`services` (
+  `id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(50),
+  `images` VARCHAR(100)
 );
 
-
-CREATE TABLE users (
-  login VARCHAR(50) PRIMARY KEY,
-  password VARCHAR(30),
-  type VARCHAR(15)
+CREATE TABLE `heroku_25f6c313623c56a`.`users` (
+  `login` VARCHAR(50) PRIMARY KEY,
+  `password` VARCHAR(30),
+  `type` VARCHAR(15)
 );
 
+-- insert admin to DB, change 'john_doe', 'password123'
+INSERT INTO `users` (`login`, `password`, `type`) VALUES ('john_doe', 'password123', 'Administrateur');
 
-//insert admin to DB, change 'john_doe', 'password123'
-
-INSERT INTO users (login, password, type) VALUES ('john_doe', 'password123', 'Administrateur');
-
-
-
-//insert horaires into DB
-
-INSERT INTO horaires (nom, horaire) VALUES
+-- insert horaires into DB
+INSERT INTO `horaires` (`nom`, `horaire`) VALUES
 ('lHour1', '08:00:00'),
 ('lHour2', '12:00:00'),
 ('lHour3', '14:00:00'),
@@ -73,4 +64,7 @@ INSERT INTO horaires (nom, horaire) VALUES
 ('sHour2', '00:00:00'),
 ('sHour3', '00:00:00'),
 ('sHour4', '00:00:00'),
-('dHour1', '00:00:00');
+('dHour1', '00:00:00'),
+('dHour2', '00:00:00'),
+('dHour3', '00:00:00'),
+('dHour4', '00:00:00')

@@ -57,7 +57,7 @@ $pageTitle = "Services";
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"
                         style="min-width:200px;">
-                        ';
+                        
                         <?php
                         include "bin/php/session.php";
                         ?>
