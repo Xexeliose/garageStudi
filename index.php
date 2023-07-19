@@ -1,4 +1,4 @@
 <?php
 //move to services page
-header("Location:..bin/services.php");
+header("Location:../bin/services.php");
 ?>
