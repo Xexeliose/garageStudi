@@ -48,17 +48,18 @@ if (!empty($_POST)) {
 
     $message = $nom . ' ' . $prenom . '<br>Email: ' . $email . '<br> Telephone: ' . $telephone . '<br><br>' . $sujet. '<br>' . $message;
 
-    $mail->SMTPAuth = true; // authentication enabled
-    $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for Gmail
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
     $mail->Host = "smtp.gmail.com";
-    $mail->Port = 587; // or 587
+    $mail->Port = 587; 
     $mail->IsHTML(true);
     $mail->Username = "francoisphpmailer@gmail.com";
     $mail->Password = "zqchsxxqfotgulpn";
-    $mail->setFrom($email, $nom . ' ' . $prenom); // L'adresse email et le nom de l'expéditeur
-    $mail->Subject = $sujet; // Le sujet de l'email
-    $mail->Body = $message; // Le contenu du corps de l'email
-    $mail->AddAddress("fbretillon@outlook.com");
+    $mail->setFrom($email, $nom . ' ' . $prenom); 
+    $mail->Subject = $sujet; 
+    $mail->Body = $message; 
+    //Adresse mail a modifier pour utilisation finale
+    $mail->AddAddress("MonEmail@exemple.com");
     
 }
 if (!empty($errors)) {
