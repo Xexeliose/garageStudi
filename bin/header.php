@@ -23,7 +23,7 @@ if (isset($_SESSION['user_login'])) {
 
 echo '
  <header class="text-center">
- <img src="bin/img/logo.png" alt="logo">
+ <img src="img/logo.png" alt="logo">
  <h1>Garage V.Parrot</h1>
  <nav class="navbar navbar-expand-sm navbar-dark bg-dark border">
    <div id="current-page" class="navbar-brand m-auto pl-5"> '.$pageTitle.'</div>
@@ -36,15 +36,15 @@ echo '
      <ul class="navbar-nav">
        <li></li>
        <li class="nav-item ">
-         <a class="nav-link" href="bin/services.php">Nos Services<span class="sr-only">(current)</span></a>
+         <a class="nav-link" href="services.php">Nos Services<span class="sr-only">(current)</span></a>
        </li>
        <li class="border"></li>
        <li class="nav-item ">
-         <a class="nav-link" href="bin/cars.php">Voitures doccasion</a>
+         <a class="nav-link" href="cars.php">Voitures doccasion</a>
        </li>
        <li class="border"></li>
        <li class="nav-item ">
-         <a class="nav-link" href="bin/contact.php">Nous contacter</a>
+         <a class="nav-link" href="contact.php">Nous contacter</a>
        </li>
        <li class="border"></li>
      </ul>
@@ -67,13 +67,13 @@ echo '
  </nav>
  <div class="user-menu bg-dark text-light row row-cols-1 row-cols-lg-3 employe adminAlign">
    <div class="col employe">
-     <a href="bin/moderation.php">Modération des avis</a>
+     <a href="moderation.php">Modération des avis</a>
    </div>
    <div class=" col border-left admin adminAlign">
-     <a href="bin/horaire.php">Modifier les horaires</a>
+     <a href="horaire.php">Modifier les horaires</a>
    </div>
    <div class=" col border-left admin adminAlign">
-   <a href="bin/userManagement.php">Gestion Comptes</a>
+   <a href="userManagement.php">Gestion Comptes</a>
  </div>
  </div>
 </header>';
